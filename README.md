@@ -6,7 +6,7 @@ You can copy and paste Int32 array from your clipboard into the input. See the i
 
 ## Demo
 
-- [dicom-standard.vercel.app](https://headwinds-dicom.vercel.app/)
+- [dicom-standard.vercel.app](https://dicom-standard.vercel.app/)
 
 ## v0 Protoype
 
