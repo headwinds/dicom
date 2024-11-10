@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardTitle } from "./ui/card";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { Link } from "cross-country";
 import React from "react";
