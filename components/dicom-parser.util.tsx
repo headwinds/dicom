@@ -51,11 +51,13 @@ const simplifiedDictionary: { [key: string]: { name: string; vr: string } } = {
 };
 
 export const parse = (
-  input,
-  dicomParser,
-  setWarning,
-  setParsedData,
-  setError
+  input: Int32Array | null,
+  dicomParser: typeof import("dicom-parser"),
+  setWarning: (warning: string) => void,
+  setParsedData: (
+    parsedData: { tag: string; name: string; value: string }[]
+  ) => void,
+  setError: (error: string) => void
 ) => {
   try {
     setError("");
@@ -99,8 +101,8 @@ export const parse = (
       return;
     }
 
-    const parsedTags = [];
-    for (let tag in dataSet.elements) {
+    const parsedTags: { tag: string; name: string; value: string }[] = [];
+    for (const tag in dataSet.elements) {
       const element = dataSet.elements[tag];
       if (element) {
         const formattedTag = tag.slice(1).toUpperCase(); // Remove leading 'x' and convert to uppercase
@@ -113,6 +115,7 @@ export const parse = (
             value = dataSet.string(tag) || "N/A";
           } catch (e) {
             value = "Unable to read value";
+            console.log("Error reading value for tag", tag, e);
           }
         }
         parsedTags.push({

@@ -1,16 +1,15 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Paragraph, HeadwindsLogo, Link } from "cross-country";
+import { HeadwindsLogo, Link } from "cross-country";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 import React from "react";
-// import brandon from './brandon_square.png';
 
 const Headwinds: React.FC = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Contact</CardTitle>
+        <CardTitle>Credit</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="mb-4">
@@ -19,7 +18,13 @@ const Headwinds: React.FC = () => {
         </p>
         <p>
           He shares the same name as the leader of Killers which murdered his
-          SEO, and often get his fan mail so you can guess his gmail address.
+          SEO, and often gets his fan mail so you can probably guess his gmail
+          address. He can still remember switching from Hotmail to{" "}
+          <Link url="https://www.pbs.org/newshour/nation/20-years-ago-people-thought-googles-gmail-launch-was-an-april-fools-day-joke">
+            Gmail in 2004
+          </Link>
+          to transfer a large file from New York to Toronto while attending a
+          tech conference.
         </p>
         <p></p>
       </CardContent>

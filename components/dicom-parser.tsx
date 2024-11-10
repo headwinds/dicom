@@ -1,6 +1,12 @@
 "use client";
+import React, { useCallback } from "react";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
 import {
   Table,
   TableBody,
@@ -8,7 +14,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import dicomParser from "dicom-parser";
 import { useEffect, useState } from "react";
 import About from "./about";
@@ -34,7 +40,7 @@ export function DicomParserSpa() {
     setJsonInput(e.target.value);
   };
 
-  const loadJson = () => {
+  const loadJson = useCallback(() => {
     try {
       const jsonData = JSON.parse(jsonInput);
       const int32Array = new Int32Array(Object.values(jsonData));
@@ -46,14 +52,9 @@ export function DicomParserSpa() {
         "Failed to parse JSON input. Please ensure you have entered valid JSON data."
       );
     }
-  };
-
-  const handleLoadJson = () => {
-    loadJson();
-  };
+  }, [jsonInput]);
 
   const handleSampleJson = () => {
-    // can we pretty print the string?
     const prettyJson = JSON.stringify(sampleJson, null, 2);
     setJsonInput(prettyJson);
     setIsSample(true);
@@ -68,21 +69,17 @@ export function DicomParserSpa() {
     setIsSample(false);
   };
 
-  const handleParse = () => {
-    parse(input, dicomParser, setWarning, setParsedData, setError);
-  };
-
   useEffect(() => {
     if (jsonInput) {
       loadJson();
     }
-  }, [jsonInput]);
+  }, [jsonInput, loadJson]);
 
   useEffect(() => {
     if (jsonInput) {
       parse(input, dicomParser, setWarning, setParsedData, setError);
     }
-  }, [input]);
+  }, [jsonInput, input]);
 
   return (
     <div className="container mx-auto p-4 space-y-6">
@@ -90,11 +87,9 @@ export function DicomParserSpa() {
       <Parser
         jsonInput={jsonInput}
         handleJsonInputChange={handleJsonInputChange}
-        handleLoadJson={handleLoadJson}
         handleSampleJson={handleSampleJson}
-        handleParse={handleParse}
         handleClear={handleClear}
-        input={input}
+        input={input ? input.toString() : ""}
         error={error}
         warning={warning}
         isSample={isSample}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { Link } from "cross-country";
 import React from "react";
@@ -24,8 +24,14 @@ const About: React.FC = () => {
             Paste the JSON representation of the Int32Array containing DICOM
             data into the textarea.
           </li>
-          <li>Click the "Load JSON" button to prepare the data for parsing.</li>
-          <li>Click "Parse DICOM" to process the data and view the results.</li>
+          <li>
+            Click the &quot;Load JSON&quot; button to prepare the data for
+            parsing.
+          </li>
+          <li>
+            Click &quot;Parse DICOM&quot; to process the data and view the
+            results.
+          </li>
         </ol>
         <p>
           The parser will attempt to extract key DICOM tags and display them in
