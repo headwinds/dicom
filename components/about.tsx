@@ -8,42 +8,40 @@ import React from "react";
 const About: React.FC = () => {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>About DICOM Parsing</CardTitle>
-      </CardHeader>
+      <CardContent className="flex justify-between w-full items-center m-1 p-2">
+        <CardTitle className="text-[24px]">DICOM ArrayBuffer Parser</CardTitle>
+        <div className="m-2">
+          <Link url="https://www.github.com/headwinds/dicom">
+            <GithubLogo size={32} color={"#000"} weight="light" />
+          </Link>
+        </div>
+      </CardContent>
       <CardContent>
         <p className="mb-4">
           This application allows you to parse DICOM (Digital Imaging and
-          Communications in Medicine) data from an Int32Array. DICOM is the
-          international standard for medical images and related information,
-          defining formats for exchanging medical image data.
+          Communications in Medicine) data from an Int32Array.
         </p>
         <p className="mb-4">To use this parser:</p>
         <ol className="list-decimal list-inside space-y-2 mb-4">
           <li>
-            Paste the JSON representation of the Int32Array containing DICOM
-            data into the textarea.
+            From Chrome inspector, you can capture and copy the Int32Array to
+            your clipboard and past it in the input. The Int32Array is one of
+            several properties of the ArrayBuffer (review the store function
+            from{" "}
+            <Link url="https://github.com/OHIF/Viewers/blob/61e3a9cb528b16ff453e6e69659a3e92108e35f3/extensions/default/src/DicomWebDataSource/index.js#L4">
+              <u>DicomWebDataSource</u>
+            </Link>
+            ).
           </li>
           <li>
-            Click the &quot;Load JSON&quot; button to prepare the data for
-            parsing.
-          </li>
-          <li>
-            Click &quot;Parse DICOM&quot; to process the data and view the
-            results.
+            As soon as you paste the Int32Array, the parser will attempt to
+            extract key DICOM tags and display them in a human-readable format.
           </li>
         </ol>
         <p>
-          The parser will attempt to extract key DICOM tags and display them in
-          a human-readable format. This can be useful for quickly inspecting
-          DICOM data or for educational purposes in understanding DICOM
-          structure.
+          This can be useful for quickly inspecting DICOM data or for
+          educational purposes in understanding DICOM structure.
         </p>
-      </CardContent>
-      <CardContent>
-        <Link url="https://www.github.com/headwinds/dicom">
-          <GithubLogo size={32} color={"#000"} weight="light" />
-        </Link>
       </CardContent>
     </Card>
   );
