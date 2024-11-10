@@ -1,6 +1,6 @@
 # dicom
 
-An experiment to parse [DICOM](https://www.dicomstandard.org/about) and learn more about it's [Multipart](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.html) content type and [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
+An experiment to parse [DICOM](https://www.dicomstandard.org/about) and learn more about it's [Multipart](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.html) content type and how [dcmjs](https://github.com/dcmjs-org/dcmjs) uses an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) to make DICOM post requests.
 
 ## v0 Protoype
 
