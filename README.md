@@ -4,13 +4,10 @@ An experiment to parse [DICOM](https://www.dicomstandard.org/about) and learn mo
 
 You can copy and paste Int32 array from your clipboard into the input. See the included sample.json for an example.
 
-### Demo
+### Demo & Prototype
 
 - [dicom-standard.vercel.app](https://dicom-standard.vercel.app/)
-
-### v0 Protoype
-
-- [v0 convo]](https://v0.dev/chat/XB512mtnRje?b=b_qDriYBBHbbZ)
+- [v0 convo](https://v0.dev/chat/XB512mtnRje?b=b_qDriYBBHbbZ)
 
 ### More About DICOM
 
