@@ -37,7 +37,7 @@ Since there are an overwhelming number of tags, it is recommended for each compa
 
 ## Tag System
 
-The [DICOM standard](https://en.wikipedia.org/wiki/DICOM) uses a comprehensive system where:
+[DICOM (wikipedia)](https://en.wikipedia.org/wiki/DICOM) uses a comprehensive system where:
 
 - Tags are organized in groups and elements (XXXX,XXXX format)
 - Public data elements have even group numbers (defined in the DICOM data dictionary)
