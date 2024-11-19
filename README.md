@@ -144,3 +144,5 @@ Note: Exact offsets depend on transfer syntax and encoding used in the file.
 ## Python
 
 - [pydicom](https://github.com/pydicom/pydicom)
+
+And many more [awesome dicom](https://github.com/open-dicom/awesome-dicom) resources
