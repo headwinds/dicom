@@ -7,6 +7,7 @@ An experiment to parse [DICOM](https://www.dicomstandard.org/about) and learn mo
 You can copy and paste Int32 array from your clipboard into the input. See the included sample.json for an example.
 
 - [dicom-standard.vercel.app](https://dicom-standard.vercel.app/)
+- [dicom-buffer.verce.app](https://dicom-buffer.vercel.app/)
 - [v0 convo](https://v0.dev/chat/XB512mtnRje?b=b_qDriYBBHbbZ)
 
 ### More About DICOM
@@ -143,3 +144,5 @@ Note: Exact offsets depend on transfer syntax and encoding used in the file.
 ## Python
 
 - [pydicom](https://github.com/pydicom/pydicom)
+
+And many more [awesome dicom](https://github.com/open-dicom/awesome-dicom) resources
